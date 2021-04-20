@@ -28,9 +28,9 @@ def predict():
     # predict the price of house by calling model.py
     predicted_price = model.predict_house_price(bath,balcony,total_sqft_int,bhk,price_per_sqft,area_type,availability,location)       
 
-
+    price = round(predicted_price, 2)
     # render the html page and show the output
-    return render_template('index.html', pred='Predicted Price of House is {}'.format(predicted_price))
+    return render_template('index.html', pred='Predicted Price of House is INR {} Lacs.'.format(price))
 
     
 if __name__ == "__main__":
