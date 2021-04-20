@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>House Price Prediction</title>
+    
+    <link rel="stylesheet" href="static/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="container">
+          <h3 class="logo">TnT<span>-PROJECT</span></h3>
+          <div class="hamburger-menu">
+            <div class="bar"></div>
+          </div>
+        </div>
+      </nav>
+
+      <h1 class="big-title translate" data-speed="0.1">Your Dream Home.</h1>
+
+      <img
+        src="static/img/person.png"
+        class="person translate"
+        data-speed="-0.25"
+        alt=""
+      />
+      <img
+        src="static/img/building.png"
+        class="building1 translate"
+        data-speed="-0.6"
+        alt=""
+      />
+      <img src="static/img/sky.png" class="sky translate" data-speed="0.2" alt="" />
+    </header>
+
+    <section>
+      <div class="shadow"></div>
+
+      <div class="container">
+        <div class="content opacity">
+          <h3 class="title">
+            About
+            <div class="border"></div>
+          </h3>
+          <p class="text">
+            A home loan statement is the summary of the amount paid for a home
+            loan in a financial year.<br />
+            It contains information like borrowed loan amount, the amount paid,
+            and outstanding loan amount and home loan EMIs to be paid by the
+            borrower.<br />
+            Housing loan statements and provisional certificates can be obtained
+            online and offline.<br />
+            A home loan statement is required to claim tax deductions.
+          </p>
+        </div>
+
+        <div class="imgContainer opacity" >
+          <h3 class="title" >
+            Enter Details
+            <div class="bordernew"></div>
+          </h3>
+          <p class="text">
+            <center>
+                <form action='/predict' method="POST" style="margin-top: 5px;">
+                  <input align="center" type="number" name="bathrooms" placeholder="Bathrooms" required="required" width="48" height="10" step=".01"/><br>
+                  <input align="center" type="number" name="balcony" placeholder="Balcony" required="required" width="48" height="10" step=".01"/><br>
+                  <input align="center" type="number" name="total_sqft_int" placeholder="Total Squre Foot" required="required" width="48" height="10" step=".01"/><br>
+                  <input align="center" type="number" name="bhk" placeholder="BHK" required="required" width="48" height="10" step=".01"/><br>
+                  <input align="center" type="number" name="price_per_sqft" placeholder="Price Per Squre Foot" required="required" width="48" height="10" step=".01"/><br>
+                  <input type="text" name="area_type" placeholder="Area Type" required="required" /><br>
+                  <input type="text" name="availability" placeholder="House Availability" required="required" /><br>
+                  <input type="text" name="location" placeholder="House Location" required="required" />   	
+            
+                    <!-- Show button -->
+                    <div style="margin-top: 10px;">
+                        <button type="submit" class="btn"><strong>Predict House Price</strong></button></a>
+                    </div>
+                    
+                </form>
+                </center>
+          </p>
+          <br>
+          <br>
+          <div style="color: aliceblue;">
+            <center>
+              <h3>{{pred}}  </h3>
+            </center>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+
+    </section>
+    <div style="padding-bottom: 25px; padding-top: 10px; background-color: black;"> 
+      <center>
+      <div>
+      <h3 style="color: white;">Made by</h3>
+      <p><a href="https://www.linkedin.com/in/adarshktiwari/" style="text-decoration: none;">Adarsh Kumar (1805695)</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://www.linkedin.com/in/vaibhav-08a8091b3/" style="text-decoration: none;color">Vaibhav (1805719)</a></p>
+      </div>
+      </center>
+    </div>
+    <script src="static/app.js"></script>
+  </body>
+</html>
